@@ -1,0 +1,14 @@
+<!--list.wxml-->
+<view class="container">
+<view class="section flex-column" bindtap="onBusSectionTap" wx:for="{{array}}" id="{{index}}">
+  <view class="bus-num flex-row">
+    <view class="bus-num-text">Route 1</view>
+  </view>
+  <view class="bus-info flex-row">
+    <view class="bus-info-text">{{item.start}}</view>
+    <view class="bus-info-text">{{item.destination}}</view>
+  </view>
+</view>
+</view>
+<!-- <image style="width: 200px; height: 200px; background-color: #eeeeee;" src="/resource/icon/bus.png}" /> -->
+

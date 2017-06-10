@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/list/list",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/mine/mine",
+    "pages/bus/bus"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FAFAFA",
+    "navigationBarTitleText": "MS班车助手",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FAFAFA"
+  },
+  "tabBar": {
+    "color": "#FFFFFF",
+    "selectedColor": "#0277BD",
+    "backgroundColor": "#FAFAFA",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/list/list",
+        "iconPath": "resource/icon/bus.png",
+        "selectedIconPath": "resource/icon/busSL.png",
+        "text": "列表"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "resource/icon/mine.png",
+        "selectedIconPath": "resource/icon/mineSL.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

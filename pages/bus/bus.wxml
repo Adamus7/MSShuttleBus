@@ -1,0 +1,26 @@
+<!--<view class="container">
+  <view class="map_container">
+    <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="16" markers="{{markers}}"></map>
+  </view>
+  <view class="map_text">
+    <text class="h1">{{textData.name}}</text>
+    <text>{{textData.desc}}</text>
+  </view>
+</view>-->
+
+<view class="container">
+  <view class="bus-title">
+    <view class="bus-tile-text">Route 1</view>
+  </view>
+  <view class="bus-time">
+    <view class="bus-start-destination fex-row">
+      <view class="bus-start-destination-text">徐家汇</view>
+      <view class="bus-start-destination-text">微软紫竹园区</view>
+    </view>
+    <view class="bus-stop fex-row">
+      <view class="bus-stop-text">虹桥路恭城路</view>
+      <view class="bus-stop-text">19:17</view>
+    </view>
+  </view>
+
+</view>
