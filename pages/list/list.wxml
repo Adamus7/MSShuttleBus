@@ -1,6 +1,5 @@
 <!--list.wxml-->
 <view class="container">
-
   <view wx:for="{{ShuttleBusList.RoundTripShuttle}}" wx:for-index="idx" wx:for-item="busItem" class="section" bindtap="onRTBusSectionTap" id="{{idx}}">
     <view class="bus-num-rt">
       <view class="bus-num-text">RT {{busItem.id}}</view>

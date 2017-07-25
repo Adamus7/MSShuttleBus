@@ -9,8 +9,9 @@
 </view>-->
 
 <view class="container">
-  <view class="bus-title">
-    <view class="bus-tile-text">Route {{targetBus.id}}</view>
+  <view class="bus-title fex-row">
+    <view class="bus-tile-text">Route {{targetBus.id}} </view>
+    <view class="bus-tile-text" bindtap="onLikeTap"><icon type="success" color="rgb(250,250,250" size="30"/></view>
   </view>
 
   <view wx:if="{{targetBus.ups}}" class="bus-time">

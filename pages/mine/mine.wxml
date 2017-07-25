@@ -1,10 +1,20 @@
 <!--mine.wxml-->
-<view class="container">
+<!-- <view class="container">
   <view bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->
+
+<view class="container">
+  <view class="bus-num-rt">
+    <view class="bus-num-text">RT </view>
+  </view>
+  <view class="bus-info">
+    <view class="bus-info-text">start</view>
+    <view class="bus-info-text">destination</view>
   </view>
 </view>

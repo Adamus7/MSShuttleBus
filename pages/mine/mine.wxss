@@ -19,3 +19,73 @@
 .usermotto {
   margin-top: 200px;
 }
+
+/* list.wxss */
+page {
+  background: #FAFAFA
+}
+
+.container {
+  display: block;
+  padding: 0rpx;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  margin: 20rpx 10rpx 20rpx 10rpx;
+  
+}
+.bus-num {
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  height: 60rpx;
+  display: flex;
+  background: #ECEFF1;
+  box-shadow: 3rpx 0rpx 8rpx 0rpx #e0e0e0;
+}
+.bus-num-rt {
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  height: 60rpx;
+  display: flex;
+  background: #CFD8DC;
+  box-shadow: 3rpx 0rpx 8rpx 0rpx #e0e0e0;
+}
+.bus-num-ws {
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  height: 60rpx;
+  display: flex;
+  background: #FFECB3;
+  box-shadow: 3rpx 0rpx 8rpx 0rpx #e0e0e0;
+}
+.bus-num-ph {
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  height: 60rpx;
+  display: flex;
+  background: #B3E5FC;
+  box-shadow: 3rpx 0rpx 8rpx 0rpx #e0e0e0;
+}
+
+.bus-num-text {
+  margin: auto 30rpx;
+  font-size: 30rpx;
+  color: #212121;
+}
+
+.bus-info {
+  background: white;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  box-shadow: 0rpx 3rpx 8rpx -2rpx #BDBDBD;
+}
+
+.bus-info-text {
+  margin:30rpx;
+}
