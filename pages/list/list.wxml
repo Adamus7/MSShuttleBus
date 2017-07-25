@@ -1,14 +1,41 @@
 <!--list.wxml-->
 <view class="container">
-<view class="section flex-column" bindtap="onBusSectionTap" wx:for="{{array}}" id="{{index}}">
-  <view class="bus-num flex-row">
-    <view class="bus-num-text">Route 1</view>
+
+  <view wx:for="{{ShuttleBusList.RoundTripShuttle}}" wx:for-index="idx" wx:for-item="busItem" class="section" bindtap="onRTBusSectionTap" id="{{idx}}">
+    <view class="bus-num-rt">
+      <view class="bus-num-text">RT {{busItem.id}}</view>
+    </view>
+    <view class="bus-info">
+      <view class="bus-info-text">{{busItem.start}}</view>
+      <view class="bus-info-text">{{busItem.destination}}</view>
+    </view>
   </view>
-  <view class="bus-info flex-row">
-    <view class="bus-info-text">{{item.start}}</view>
-    <view class="bus-info-text">{{item.destination}}</view>
+  <view wx:for="{{ShuttleBusList.RegularRouteShuttle}}" wx:for-index="idx" wx:for-item="busItem" class="section" bindtap="onBusSectionTap" id="{{idx}}">
+    <view class="bus-num">
+      <view class="bus-num-text">Route {{busItem.id}}</view>
+    </view>
+    <view class="bus-info">
+      <view class="bus-info-text">{{busItem.start}}</view>
+      <view class="bus-info-text">{{busItem.destination}}</view>
+    </view>
   </view>
-</view>
+  <view wx:for="{{ShuttleBusList.WeekendShuttle}}" wx:for-index="idx" wx:for-item="busItem" class="section" bindtap="onWSBusSectionTap" id="{{idx}}">
+    <view class="bus-num-ws">
+      <view class="bus-num-text">Weekend Shuttle {{busItem.id}}</view>
+    </view>
+    <view class="bus-info">
+      <view class="bus-info-text">{{busItem.start}}</view>
+      <view class="bus-info-text">{{busItem.destination}}</view>
+    </view>
+  </view>
+  <view wx:for="{{ShuttleBusList.PublicHolidayShuttle}}" wx:for-index="idx" wx:for-item="busItem" class="section" bindtap="onPHBusSectionTap" id="{{idx}}">
+    <view class="bus-num-ph">
+      <view class="bus-num-text">Holiday Shuttle {{busItem.id}}</view>
+    </view>
+    <view class="bus-info">
+      <view class="bus-info-text">{{busItem.start}}</view>
+      <view class="bus-info-text">{{busItem.destination}}</view>
+    </view>
+  </view>
 </view>
 <!-- <image style="width: 200px; height: 200px; background-color: #eeeeee;" src="/resource/icon/bus.png}" /> -->
-

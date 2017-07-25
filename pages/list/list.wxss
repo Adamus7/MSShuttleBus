@@ -12,6 +12,7 @@ page {
   display: flex;
   flex-direction: column;
   margin: 20rpx 10rpx 20rpx 10rpx;
+  
 }
 
 .bus-num {
@@ -19,12 +20,36 @@ page {
   border-top-right-radius: 10rpx;
   height: 60rpx;
   display: flex;
-  background: #F5F5F5;
+  background: #ECEFF1;
+  box-shadow: 3rpx 0rpx 8rpx 0rpx #e0e0e0;
+}
+.bus-num-rt {
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  height: 60rpx;
+  display: flex;
+  background: #CFD8DC;
+  box-shadow: 3rpx 0rpx 8rpx 0rpx #e0e0e0;
+}
+.bus-num-ws {
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  height: 60rpx;
+  display: flex;
+  background: #FFECB3;
+  box-shadow: 3rpx 0rpx 8rpx 0rpx #e0e0e0;
+}
+.bus-num-ph {
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  height: 60rpx;
+  display: flex;
+  background: #B3E5FC;
   box-shadow: 3rpx 0rpx 8rpx 0rpx #e0e0e0;
 }
 
 .bus-num-text {
-  margin: auto 40rpx;
+  margin: auto 30rpx;
   font-size: 30rpx;
   color: #212121;
 }
@@ -35,10 +60,11 @@ page {
   border-bottom-right-radius: 10rpx;
   height: 120rpx;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content:space-between;
   box-shadow: 0rpx 3rpx 8rpx -2rpx #BDBDBD;
 }
 
 .bus-info-text {
-  margin: auto;
+  margin:30rpx;
 }

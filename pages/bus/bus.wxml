@@ -10,17 +10,27 @@
 
 <view class="container">
   <view class="bus-title">
-    <view class="bus-tile-text">Route 1</view>
-  </view>
-  <view class="bus-time">
-    <view class="bus-start-destination fex-row">
-      <view class="bus-start-destination-text">徐家汇</view>
-      <view class="bus-start-destination-text">微软紫竹园区</view>
-    </view>
-    <view class="bus-stop fex-row">
-      <view class="bus-stop-text">虹桥路恭城路</view>
-      <view class="bus-stop-text">19:17</view>
-    </view>
+    <view class="bus-tile-text">Route {{targetBus.id}}</view>
   </view>
 
+  <view wx:if="{{targetBus.ups}}" class="bus-time">
+    <view class="bus-start-destination-up fex-row">
+      <view class="bus-start-destination-text">{{targetBus.start}}</view>
+      <view class="bus-start-destination-text">{{targetBus.destination}}</view>
+    </view>
+    <view wx:for="{{targetBus.ups}}" wx:for-index="idx" wx:for-item="upstopItem" id="{{idx}}" class="bus-stop fex-row">
+      <view>{{upstopItem.name}}</view>
+      <view>{{upstopItem.time}}</view>
+    </view>
+  </view>
+  <view class="bus-time">
+    <view class="bus-start-destination-down fex-row">
+      <view class="bus-start-destination-text">{{targetBus.destination}}</view>
+      <view class="bus-start-destination-text">{{targetBus.start}}</view>
+    </view>
+    <view wx:for="{{targetBus.downs}}" wx:for-index="idx" wx:for-item="upstopItem" id="{{idx}}" class="bus-stop fex-row">
+      <view>{{upstopItem.name}}</view>
+      <view>{{upstopItem.time}}</view>
+    </view>
+  </view>
 </view>

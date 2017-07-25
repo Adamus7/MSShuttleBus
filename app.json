@@ -1,10 +1,9 @@
 {
   "pages": [
     "pages/list/list",
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/mine/mine",
-    "pages/bus/bus"
+    "pages/bus/bus",
+    "pages/bus-rt/bus-rt"
   ],
   "window": {
     "backgroundTextStyle": "light",

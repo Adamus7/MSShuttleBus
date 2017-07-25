@@ -1,59 +1,34 @@
+// bus.js
+var app = getApp()
+
 Page({
   data: {
+    targetBus: 0
   },
   onLoad: function (option) {
-    console.log(option.id)
+    var that = this
+    //调用应用实例的方法获取全局数据
+    console.log(option.type)
+    app.getShuttlBusList(function (ShuttleBusList) {
+      //更新数据
+      switch(option.type){
+        case 'r':
+          that.setData({
+            targetBus: ShuttleBusList.RegularRouteShuttle[option.id]
+          })
+          break
+        case 'ws':
+          that.setData({
+            targetBus: ShuttleBusList.WeekendShuttle[option.id]
+          })
+          break
+        case 'ph':
+          that.setData({
+            targetBus: ShuttleBusList.PublicHolidayShuttle[option.id]
+          })
+          break
+      }
+    })
+
   }
 })
-
-// var amapFile = require('../../libs/amap-wx.js');
-// var config = require('../../libs/config.js');
-
-// Page({
-//   data: {
-//     markers: [],
-//     latitude: '',
-//     longitude: '',
-//     textData: {}
-//   },
-//   onLoad: function (option) {
-//     console.log(option.id);
-    
-//     var that = this;
-//     var key = config.Config.key;
-//     var myAmapFun = new amapFile.AMapWX({ key: key });
-//     myAmapFun.getRegeo({
-//       iconPath: "../../resource/icon/marker.png",
-//       iconWidth: 22,
-//       iconHeight: 32,
-//       success: function (data) {
-//         var marker = [{
-//           id: data[0].id,
-//           latitude: data[0].latitude,
-//           longitude: data[0].longitude,
-//           iconPath: data[0].iconPath,
-//           width: data[0].width,
-//           height: data[0].height
-//         }]
-//         that.setData({
-//           markers: marker
-//         });
-//         that.setData({
-//           latitude: data[0].latitude
-//         });
-//         that.setData({
-//           longitude: data[0].longitude
-//         });
-//         that.setData({
-//           textData: {
-//             name: data[0].name,
-//             desc: data[0].desc
-//           }
-//         })
-//       },
-//       fail: function (info) {
-//         wx.showModal({title:info.errMsg})
-//       }
-//     })
-//   }
-// })
