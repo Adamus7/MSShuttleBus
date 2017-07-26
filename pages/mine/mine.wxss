@@ -1,26 +1,4 @@
 /* mine.wxss */
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
-}
-
-/* list.wxss */
 page {
   background: #FAFAFA
 }
@@ -36,12 +14,13 @@ page {
   margin: 20rpx 10rpx 20rpx 10rpx;
   
 }
+
 .bus-num {
   border-top-left-radius: 10rpx;
   border-top-right-radius: 10rpx;
   height: 60rpx;
   display: flex;
-  background: #ECEFF1;
+  background: #C5E1A5;
   box-shadow: 3rpx 0rpx 8rpx 0rpx #e0e0e0;
 }
 .bus-num-rt {

@@ -1,34 +1,16 @@
 <!--list.wxml-->
 <view class="container">
-  <view wx:for="{{ShuttleBusList.RoundTripShuttle}}" wx:for-index="idx" wx:for-item="busItem" class="section" bindtap="onRTBusSectionTap" id="{{idx}}">
-    <view class="bus-num-rt">
+  <view wx:for="{{ShuttleBusList}}" wx:for-index="idx" wx:for-item="busItem" class="section" bindtap="onBusSectionTap" id="{{idx}}">
+    <view wx:if="{{busItem.type == 'RoundTripShuttle'}}" class="bus-num-rt">
       <view class="bus-num-text">RT {{busItem.id}}</view>
     </view>
-    <view class="bus-info">
-      <view class="bus-info-text">{{busItem.start}}</view>
-      <view class="bus-info-text">{{busItem.destination}}</view>
-    </view>
-  </view>
-  <view wx:for="{{ShuttleBusList.RegularRouteShuttle}}" wx:for-index="idx" wx:for-item="busItem" class="section" bindtap="onBusSectionTap" id="{{idx}}">
-    <view class="bus-num">
+    <view wx:if="{{busItem.type == 'RegularRouteShuttle'}}" class="bus-num">
       <view class="bus-num-text">Route {{busItem.id}}</view>
     </view>
-    <view class="bus-info">
-      <view class="bus-info-text">{{busItem.start}}</view>
-      <view class="bus-info-text">{{busItem.destination}}</view>
-    </view>
-  </view>
-  <view wx:for="{{ShuttleBusList.WeekendShuttle}}" wx:for-index="idx" wx:for-item="busItem" class="section" bindtap="onWSBusSectionTap" id="{{idx}}">
-    <view class="bus-num-ws">
+    <view wx:if="{{busItem.type == 'WeekendShuttle'}}" class="bus-num-ws">
       <view class="bus-num-text">Weekend Shuttle {{busItem.id}}</view>
     </view>
-    <view class="bus-info">
-      <view class="bus-info-text">{{busItem.start}}</view>
-      <view class="bus-info-text">{{busItem.destination}}</view>
-    </view>
-  </view>
-  <view wx:for="{{ShuttleBusList.PublicHolidayShuttle}}" wx:for-index="idx" wx:for-item="busItem" class="section" bindtap="onPHBusSectionTap" id="{{idx}}">
-    <view class="bus-num-ph">
+    <view wx:if="{{busItem.type == 'PublicHolidayShuttle'}}" class="bus-num-ph">
       <view class="bus-num-text">Holiday Shuttle {{busItem.id}}</view>
     </view>
     <view class="bus-info">

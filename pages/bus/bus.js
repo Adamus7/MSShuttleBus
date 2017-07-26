@@ -3,64 +3,91 @@ var app = getApp()
 
 Page({
   data: {
-    targetBus: 0
+    targetBus: 0,
+    isLiked: false
   },
   onLoad: function (option) {
     var that = this
-    //调用应用实例的方法获取全局数据
-    console.log(option.type)
     app.getShuttlBusList(function (ShuttleBusList) {
-      //更新数据
-      switch (option.type) {
-        case 'r':
-          that.setData({
-            targetBus: ShuttleBusList.RegularRouteShuttle[option.id]
-          })
-          break
-        case 'ws':
-          that.setData({
-            targetBus: ShuttleBusList.WeekendShuttle[option.id]
-          })
-          break
-        case 'ph':
-          that.setData({
-            targetBus: ShuttleBusList.PublicHolidayShuttle[option.id]
-          })
-          break
-      }
+      that.setData({
+        targetBus: ShuttleBusList[option.id]
+      })
     })
-  },
-  onLikeTap: function (e) {
-    var that = this
-    console.log("onLikeTab")
-    // wx.setStorage({
-    //   key: "likedRegularRoute",
-    //   data: "value"
-    // })
-    // wx.setStorage({
-    //   key: 'likedRegularRoute',
-    //   data: [that.data.targetBus]
-    // })
+
     wx.getStorage({
-      key: 'likedRegularRoute',
+      key: 'likedRoute',
       success: function (res) {
         var data = res.data
-        console.log(data)
-        console.log(that.data.targetBus)
-        if (!data.includes(that.data.targetBus)) {
-          //data.push(that.data.targetBus)
-          // wx.setStorage({
-          //   key: 'likedRegularRoute',
-          //   data: data
-          // })
+        var targetBus = that.data.targetBus
+
+        var found = false;
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].id == targetBus.id && data[i].type == targetBus.type) {
+            found = true;
+            that.setData({
+              isLiked: true
+            })
+            break;
+          }
         }
+
+      }
+
+    })
+  },
+
+  onLikeTap: function (e) {
+    var that = this
+
+    wx.getStorage({
+      key: 'likedRoute',
+      success: function (res) {
+        var data = res.data
+        var targetBus = that.data.targetBus
+
+        //Check if targetBus is in Liked array
+        var found = false;
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].id == targetBus.id && data[i].type == targetBus.type) {
+            found = true;
+            //If found, remoted it from the Liked array
+            //Set isLiked to false 
+            data.splice(i, 1);
+            wx.setStorage({
+              key: 'likedRoute',
+              data: data
+            })
+            that.setData({
+              isLiked: false
+            })
+            break;
+          }
+        }
+
+        //If not found, add it
+        if (!found) {
+          data.push(targetBus)
+          wx.setStorage({
+            key: 'likedRoute',
+            data: data
+          })
+          that.setData({
+            isLiked: true
+          })
+        }
+
       },
+      //If can't get it, set the current one into Liked list
       fail: function () {
         wx.setStorage({
-          key: 'likedRegularRoute',
+          key: 'likedRoute',
           data: [that.data.targetBus]
         })
       }
     })
+  },
+
+  onStationSectionTap: function(e){
+
   }
 })

@@ -2,8 +2,7 @@
   "pages": [
     "pages/list/list",
     "pages/mine/mine",
-    "pages/bus/bus",
-    "pages/bus-rt/bus-rt"
+    "pages/bus/bus"
   ],
   "window": {
     "backgroundTextStyle": "light",

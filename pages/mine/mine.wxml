@@ -1,20 +1,21 @@
 <!--mine.wxml-->
-<!-- <view class="container">
-  <view bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view> -->
-
 <view class="container">
-  <view class="bus-num-rt">
-    <view class="bus-num-text">RT </view>
-  </view>
-  <view class="bus-info">
-    <view class="bus-info-text">start</view>
-    <view class="bus-info-text">destination</view>
+  <view wx:for="{{likedBusList}}" wx:for-index="idx" wx:for-item="busItem" class="section" bindtap="onBusSectionTap" id="{{idx}}">
+    <view wx:if="{{busItem.type == 'RoundTripShuttle'}}" class="bus-num-rt">
+      <view class="bus-num-text">RT {{busItem.id}}</view>
+    </view>
+    <view wx:if="{{busItem.type == 'RegularRouteShuttle'}}" class="bus-num">
+      <view class="bus-num-text">Route {{busItem.id}}</view>
+    </view>
+    <view wx:if="{{busItem.type == 'WeekendShuttle'}}" class="bus-num-ws">
+      <view class="bus-num-text">Weekend Shuttle {{busItem.id}}</view>
+    </view>
+    <view wx:if="{{busItem.type == 'PublicHolidayShuttle'}}" class="bus-num-ph">
+      <view class="bus-num-text">Holiday Shuttle {{busItem.id}}</view>
+    </view>
+    <view class="bus-info">
+      <view class="bus-info-text">{{busItem.start}}</view>
+      <view class="bus-info-text">{{busItem.destination}}</view>
+    </view>
   </view>
 </view>

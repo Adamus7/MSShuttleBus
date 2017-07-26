@@ -9,17 +9,20 @@
 </view>-->
 
 <view class="container">
-  <view class="bus-title fex-row">
-    <view class="bus-tile-text">Route {{targetBus.id}} </view>
-    <view class="bus-tile-text" bindtap="onLikeTap"><icon type="success" color="rgb(250,250,250" size="30"/></view>
-  </view>
 
+<block wx:if="{{targetBus.type == 'RegularRouteShuttle' || targetBus.type == 'WeekendShuttle' || targetBus.type == 'PublicHolidayShuttle'}}">
+  <view class="bus-title fex-row">
+    <view class="bus-tile-text" wx:if="{{targetBus.type == 'RegularRouteShuttle'}}">Route {{targetBus.id}} </view>
+    <view class="bus-tile-text" wx:if="{{targetBus.type == 'WeekendShuttle'}}">Weekend Shuttle {{targetBus.id}} </view>
+    <view class="bus-tile-text" wx:if="{{targetBus.type == 'PublicHolidayShuttle'}}">Public Holiday Shuttle {{targetBus.id}} </view>
+    <view class="bus-tile-text" bindtap="onLikeTap"><icon wx:if="{{isLiked}}" type="success" size="30"/><icon wx:else type="success" color="rgb(250,250,250)" size="30"/></view>
+  </view>
   <view wx:if="{{targetBus.ups}}" class="bus-time">
     <view class="bus-start-destination-up fex-row">
       <view class="bus-start-destination-text">{{targetBus.start}}</view>
       <view class="bus-start-destination-text">{{targetBus.destination}}</view>
     </view>
-    <view wx:for="{{targetBus.ups}}" wx:for-index="idx" wx:for-item="upstopItem" id="{{idx}}" class="bus-stop fex-row">
+    <view wx:for="{{targetBus.ups}}" wx:for-index="idx" wx:for-item="upstopItem" id="{{idx}}" class="bus-stop fex-row" bindtap="onStationSectionTap">
       <view>{{upstopItem.name}}</view>
       <view>{{upstopItem.time}}</view>
     </view>
@@ -29,9 +32,42 @@
       <view class="bus-start-destination-text">{{targetBus.destination}}</view>
       <view class="bus-start-destination-text">{{targetBus.start}}</view>
     </view>
-    <view wx:for="{{targetBus.downs}}" wx:for-index="idx" wx:for-item="upstopItem" id="{{idx}}" class="bus-stop fex-row">
+    <view wx:for="{{targetBus.downs}}" wx:for-index="idx" wx:for-item="upstopItem" id="{{idx}}" class="bus-stop fex-row" bindtap="onStationSectionTap">
       <view>{{upstopItem.name}}</view>
       <view>{{upstopItem.time}}</view>
     </view>
   </view>
+</block>
+
+<block wx:if="{{targetBus.type == 'RoundTripShuttle'}}">
+  <view class="bus-title fex-row">
+    <view class="bus-tile-text">RT {{targetBus.id}}</view>
+    <view class="bus-tile-text" bindtap="onLikeTap"><icon wx:if="{{isLiked}}" type="success" size="30"/><icon wx:else type="success" color="rgb(250,250,250)" size="30"/></view>
+  </view>
+  <view class="bus-time">
+    <view class="bus-start-destination-up fex-row">
+      <view class="bus-start-destination-text">{{targetBus.start}}</view>
+      <view class="bus-start-destination-text">{{targetBus.destination}}</view>
+    </view>
+    <view wx:for="{{targetBus.ups}}" wx:for-index="idx" wx:for-item="lineItem" class="bus-time-rt">
+      <view wx:for="{{lineItem}}" wx:for-index="idx" wx:for-item="upstopItem" id="{{idx}}" class="bus-stop fex-row" bindtap="onStationSectionTap">
+        <view>{{upstopItem.name}}</view>
+        <view>{{upstopItem.time}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="bus-time">
+    <view class="bus-start-destination-down fex-row">
+      <view class="bus-start-destination-text">{{targetBus.destination}}</view>
+      <view class="bus-start-destination-text">{{targetBus.start}}</view>
+    </view>
+    <view wx:for="{{targetBus.downs}}" wx:for-index="idx" wx:for-item="lineItem" class="bus-time-rt">
+      <view wx:for="{{lineItem}}" wx:for-index="idx" wx:for-item="downstopItem" id="{{idx}}" class="bus-stop fex-row" bindtap="onStationSectionTap">
+        <view>{{downstopItem.name}}</view>
+        <view>{{downstopItem.time}}</view>
+      </view>
+    </view>
+  </view>
+</block>
+
 </view>

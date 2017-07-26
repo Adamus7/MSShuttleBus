@@ -2,24 +2,44 @@
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {}
+    likedBusList:0,
+    ShuttleBusList:[]
   },
-  //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
+  onLoad: function (options) {
+    console.log("list load")
+    var that = this
+    app.getShuttlBusList(function (ShuttleBusList) {
+      that.setData({
+        ShuttleBusList: ShuttleBusList
+      })
     })
   },
-  onLoad: function () {
-    console.log('onLoad')
+  onShow: function () {
     var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function (userInfo) {
-      //更新数据
+    wx.getStorage({
+      key: 'likedRoute',
+      success: function (res) {
       that.setData({
-        userInfo: userInfo
+        likedBusList:res.data
       })
+      }
+    })
+  },
+
+  onBusSectionTap: function (e) {
+    var that  = this
+    
+    var currentTargetBus = that.data.likedBusList[e.currentTarget.id]
+    var ShuttleBusList = that.data.ShuttleBusList
+    var idx = -1
+    for (var i = 0; i < ShuttleBusList.length; i++) {
+      if (ShuttleBusList[i].id == currentTargetBus.id && ShuttleBusList[i].type == currentTargetBus.type) {
+        idx = i
+        break
+      }
+    }
+    wx.navigateTo({
+      url: '../bus/bus?id=' + idx
     })
   }
 })
