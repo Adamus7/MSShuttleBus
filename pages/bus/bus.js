@@ -88,6 +88,8 @@ Page({
   },
 
   onStationSectionTap: function(e){
-
+    wx.navigateTo({
+      url: '../station/station'
+    })
   }
 })
