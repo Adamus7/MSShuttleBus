@@ -96,9 +96,10 @@ Page({
   },
   onShareAppMessage: function(){
     var that = this
+    console.log(that.data.idx)
     return {
       title: that.data.targetBus.name,
-      path: '/page/user?id=' + that.data.idx,
+      path: '/pages/bus/bus?id=' + that.data.idx,
       success: function (res) {
         // 转发成功
       },
