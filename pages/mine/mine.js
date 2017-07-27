@@ -6,7 +6,6 @@ Page({
     ShuttleBusList:[]
   },
   onLoad: function (options) {
-    console.log("list load")
     var that = this
     app.getShuttlBusList(function (ShuttleBusList) {
       that.setData({
