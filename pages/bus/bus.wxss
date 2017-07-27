@@ -10,6 +10,8 @@ page {
 .bus-title {
   border-top-left-radius: 10rpx;
   border-top-right-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
   height: 150rpx;
   margin: 20rpx 10rpx 20rpx 10rpx;
   background: #CFD8DC;

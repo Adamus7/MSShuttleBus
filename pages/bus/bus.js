@@ -4,13 +4,15 @@ var app = getApp()
 Page({
   data: {
     targetBus: 0,
-    isLiked: false
+    isLiked: false,
+    idx:0
   },
   onLoad: function (option) {
     var that = this
     app.getShuttlBusList(function (ShuttleBusList) {
       that.setData({
-        targetBus: ShuttleBusList[option.id]
+        targetBus: ShuttleBusList[option.id],
+        idx: option.id
       })
     })
 
@@ -88,15 +90,21 @@ Page({
   },
 
   onStationSectionTap: function(e){
-    wx.navigateTo({
-      url: '../station/station'
-    })
+    // wx.navigateTo({
+    //   url: '../station/station'
+    // })
   },
   onShareAppMessage: function(){
     var that = this
     return {
       title: that.data.targetBus.name,
-      path: '/page/user?id=' + option.id,
+      path: '/page/user?id=' + that.data.idx,
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
     }
   }
 })
