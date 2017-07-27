@@ -91,5 +91,12 @@ Page({
     wx.navigateTo({
       url: '../station/station'
     })
+  },
+  onShareAppMessage: function(){
+    var that = this
+    return {
+      title: that.data.targetBus.name,
+      path: '/page/user?id=' + option.id,
+    }
   }
 })
