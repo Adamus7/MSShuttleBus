@@ -20,7 +20,7 @@ page {
   border-top-right-radius: 10rpx;
   height: 60rpx;
   display: flex;
-  background: #C5E1A5;
+  background: #04a5f0;
   box-shadow: 3rpx 0rpx 8rpx 0rpx #e0e0e0;
 }
 .bus-num-rt {
@@ -28,7 +28,7 @@ page {
   border-top-right-radius: 10rpx;
   height: 60rpx;
   display: flex;
-  background: #CFD8DC;
+  background: #81bb05;
   box-shadow: 3rpx 0rpx 8rpx 0rpx #e0e0e0;
 }
 .bus-num-ws {
@@ -44,14 +44,14 @@ page {
   border-top-right-radius: 10rpx;
   height: 60rpx;
   display: flex;
-  background: #B3E5FC;
+  background:#04a5f0;
   box-shadow: 3rpx 0rpx 8rpx 0rpx #e0e0e0;
 }
 
 .bus-num-text {
   margin: auto 30rpx;
   font-size: 30rpx;
-  color: #212121;
+  color: white;
 }
 
 .bus-info {
@@ -67,4 +67,15 @@ page {
 
 .bus-info-text {
   margin:30rpx;
+}
+
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
 }

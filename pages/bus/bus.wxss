@@ -14,8 +14,9 @@ page {
   border-bottom-right-radius: 10rpx;
   height: 150rpx;
   margin: 20rpx 10rpx 20rpx 10rpx;
-  background: #CFD8DC;
+  background: #BDBDBD;
   box-shadow: 0rpx 3rpx 8rpx -2rpx #BDBDBD;
+  color: white;
 }
 
 .bus-tile-text{
@@ -41,13 +42,15 @@ page {
 .bus-start-destination-up{
   border-top-left-radius: 10rpx;
   border-top-right-radius: 10rpx;
-  background: #80DEEA;
+  background: #04a5f0;
   height: 100rpx;
+  color: white;
 }
 .bus-start-destination-down{
   border-top-left-radius: 10rpx;
   border-top-right-radius: 10rpx;
-  background: #FFE082;
+  background: #ffba07;
+  color: white;
   height: 100rpx;
 }
 
