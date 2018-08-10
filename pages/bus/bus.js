@@ -96,7 +96,7 @@ Page({
   },
   onShareAppMessage: function(){
     var that = this
-    console.log(that.data.idx)
+    //console.log(that.data.idx)
     return {
       title: that.data.targetBus.name,
       path: '/pages/bus/bus?id=' + that.data.idx,
