@@ -27,6 +27,20 @@ Page({
       url: '../bus/bus?id=' + e.currentTarget.id
     })
   },
+  onShareAppMessage: function () {
+    var that = this
+    //console.log(that.data.idx)
+    return {
+      title: 'MS班车小助手',
+      path: '/pages/list/list',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+  },
   //Search
   showInput: function () {
     this.setData({
