@@ -8,3 +8,5 @@
     <text class="user-motto">{{motto}}</text>
   </view>
 </view>
+<view class="weui-footer">Data updated @ 2019.3.5</view>
+<view class="weui-footer">Find a bug? Please report it to yuray, thanks!</view>
