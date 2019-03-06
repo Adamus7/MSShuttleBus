@@ -1,16 +1,11 @@
 //app.js
 App({
   onLaunch: function () {
-    //调用API从本地缓存中获取数据
-    // var logs = wx.getStorageSync('logs') || []
-    // logs.unshift(Date.now())
-    // wx.setStorageSync('logs', logs)
-    // console.log("test")
   },
   getUserInfo: function (cb) {
     var that = this
-    if (this.globalData.userInfo) {
-      typeof cb == "function" && cb(this.globalData.userInfo)
+    if (that.globalData.userInfo) {
+      typeof cb == "function" && cb(that.globalData.userInfo)
     } else {
       //调用登录接口
       wx.login({
@@ -27,8 +22,8 @@ App({
   },
   getShuttlBusList: function (cb) {
     var that = this
-    if (this.globalData.ShuttleBusList) {
-      typeof cb == "function" && cb(this.globalData.ShuttleBusList)
+    if (that.globalData.ShuttleBusList) {
+      typeof cb == "function" && cb(that.globalData.ShuttleBusList)
     }
   },
   globalData: {
@@ -978,7 +973,7 @@ App({
         }
       },
       {
-        "id": "3B",
+        "id": "3(B)",
         "type": "RoundTripShuttle",
         "name": "龙茗路顾戴路 - 微软上海园区",
         "start": "龙茗路顾戴路",

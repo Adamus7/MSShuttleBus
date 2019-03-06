@@ -90,9 +90,9 @@ Page({
   },
 
   onStationSectionTap: function(e){
-    // wx.navigateTo({
-    //   url: '../station/station'
-    // })
+    wx.navigateTo({
+      url: '../station/station'
+    })
   },
   onShareAppMessage: function(){
     var that = this
