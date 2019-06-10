@@ -12,6 +12,8 @@
 	"appid": "wx65000d9b2d6fcf93",
 	"projectname": "MSShuttleBus",
 	"scripts": {},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
