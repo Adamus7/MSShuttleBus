@@ -9,7 +9,6 @@
 </view>-->
 
 <view class="container">
-
 <block wx:if="{{targetBus.type == 'RegularRouteShuttle' || targetBus.type == 'WeekendShuttle' || targetBus.type == 'PublicHolidayShuttle'}}">
   <view class="bus-title fex-row">
     <view class="bus-tile-text" wx:if="{{targetBus.type == 'RegularRouteShuttle'}}">Route {{targetBus.id}} </view>
@@ -70,5 +69,7 @@
   </view>
 </block>
 </view>
-<view class="weui-footer">Data updated @ 2019.7.31</view>
+<ad unit-id="adunit-0919656f725fe441"></ad>
+<view class="weui-footer">Sorry for the AD here, just for testing. If you don't like it, please let me know.</view>
+<view class="weui-footer">Data updated @ 2019.11.26</view>
 <view class="weui-footer">Find a bug? Please report to adamus_7@outlook.com , thanks!</view>
