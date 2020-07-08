@@ -21,7 +21,7 @@
       <view class="bus-start-destination-text">{{targetBus.start}}</view>
       <view class="bus-start-destination-text">{{targetBus.destination}}</view>
     </view>
-    <view wx:for="{{targetBus.ups}}" wx:for-index="idx" wx:for-item="upstopItem" id="{{idx}}" class="bus-stop fex-row" bindtap="onStationSectionTap">
+    <view wx:for="{{targetBus.ups}}" wx:for-index="idx" wx:for-item="upstopItem" id="{{idx}}" class="bus-stop fex-row" bindtap="onStationSectionTap" data-station="{{upstopItem.name}}">
       <view>{{upstopItem.name}}</view>
       <view>{{upstopItem.time}}</view>
     </view>
@@ -31,7 +31,7 @@
       <view class="bus-start-destination-text">{{targetBus.destination}}</view>
       <view class="bus-start-destination-text">{{targetBus.start}}</view>
     </view>
-    <view wx:for="{{targetBus.downs}}" wx:for-index="idx" wx:for-item="upstopItem" id="{{idx}}" class="bus-stop fex-row" bindtap="onStationSectionTap">
+    <view wx:for="{{targetBus.downs}}" wx:for-index="idx" wx:for-item="upstopItem" id="{{idx}}" class="bus-stop fex-row" bindtap="onStationSectionTap" data-station="{{upstopItem.name}}">
       <view>{{upstopItem.name}}</view>
       <view>{{upstopItem.time}}</view>
     </view>
@@ -49,7 +49,7 @@
       <view class="bus-start-destination-text">{{targetBus.destination}}</view>
     </view>
     <view wx:for="{{targetBus.ups}}" wx:for-index="idx" wx:for-item="lineItem" class="bus-time-rt">
-      <view wx:for="{{lineItem}}" wx:for-index="idx" wx:for-item="upstopItem" id="{{idx}}" class="bus-stop fex-row" bindtap="onStationSectionTap">
+      <view wx:for="{{lineItem}}" wx:for-index="idx" wx:for-item="upstopItem" id="{{idx}}" class="bus-stop fex-row" bindtap="onStationSectionTap" data-station="{{upstopItem.name}}">
         <view>{{upstopItem.name}}</view>
         <view>{{upstopItem.time}}</view>
       </view>
@@ -61,7 +61,7 @@
       <view class="bus-start-destination-text">{{targetBus.start}}</view>
     </view>
     <view wx:for="{{targetBus.downs}}" wx:for-index="idx" wx:for-item="lineItem" class="bus-time-rt">
-      <view wx:for="{{lineItem}}" wx:for-index="idx" wx:for-item="downstopItem" id="{{idx}}" class="bus-stop fex-row" bindtap="onStationSectionTap">
+      <view wx:for="{{lineItem}}" wx:for-index="idx" wx:for-item="downstopItem" id="{{idx}}" class="bus-stop fex-row" bindtap="onStationSectionTap" data-station="{{downstopItem.name}}">
         <view>{{downstopItem.name}}</view>
         <view>{{downstopItem.time}}</view>
       </view>
@@ -69,5 +69,5 @@
   </view>
 </block>
 </view>
-<view class="weui-footer">Data updated @ 2019.12.27</view>
+<view class="weui-footer">Data updated @ 2020.07.04</view>
 <view class="weui-footer">Find a bug? Please report to adamus_7@outlook.com , thanks!</view>

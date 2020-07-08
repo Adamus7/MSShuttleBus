@@ -5,7 +5,7 @@ Page({
   data: {
     targetBus: 0,
     isLiked: false,
-    idx:0
+    idx: 0
   },
   onLoad: function (option) {
     var that = this
@@ -89,12 +89,14 @@ Page({
     })
   },
 
-  onStationSectionTap: function(e){
-    wx.navigateTo({
-      //url: '../station/station'
-    })
-  },
-  onShareAppMessage: function(){
+// New funciton TODO
+  // onStationSectionTap: function (e) {
+  //   console.log(e);
+  //   wx.navigateTo({
+  //     url: '../station/station?stationName=' + e.currentTarget.dataset["station"],
+  //   })
+  // },
+  onShareAppMessage: function () {
     var that = this
     //console.log(that.data.idx)
     return {

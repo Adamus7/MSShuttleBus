@@ -44,7 +44,7 @@ page {
   border-top-right-radius: 10rpx;
   height: 60rpx;
   display: flex;
-  background:#04a5f0;
+  background:#f0b104e7;
   box-shadow: 3rpx 0rpx 8rpx 0rpx #e0e0e0;
 }
 

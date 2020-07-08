@@ -1,2 +1,2 @@
 
-<map id="map" longitude="121.450575" latitude="31.020343" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 1000rpx;"></map>
+<map id="map" longitude="121.450575" latitude="31.020343" scale="14" markers="{{markers}}" show-location style="width: 100%; height: 1000rpx;" wx:if="{{hasMarkers}}"></map>
